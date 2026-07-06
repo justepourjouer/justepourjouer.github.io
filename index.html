@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Samantha Merlivat — Go-to-Market &amp; Strategy Leader</title>
+<meta name="description" content="Samantha Merlivat is a Go-to-Market & Strategy leader in Berlin. Founder, growth operator and advisor — from 90k-download apps to trending tech summits.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Archivo:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #FFFFFF;
+    --paper-deep: #F1F1ED;
+    --ink: #1B1B19;
+    --ink-soft: #6C6B65;
+    --line: #E2E1DB;
+    --accent: #E04E1F;
+    --accent-deep: #B93C13;
+    --accent-tint: #FBE9E1;
+
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1.0625rem;
+    --text-lg: 1.375rem;
+    --text-xl: 1.875rem;
+    --text-2xl: 2.5rem;
+    --text-3xl: 3.4rem;
+    --text-4xl: 4.8rem;
+
+    --s1: 0.5rem; --s2: 1rem; --s3: 1.5rem; --s4: 2rem;
+    --s5: 3rem; --s6: 4.5rem; --s7: 7rem;
+
+    --radius: 2px;
+    --ease: cubic-bezier(.22,.9,.35,1);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  ::selection { background: var(--accent); color: #fff; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Archivo', sans-serif;
+    font-size: var(--text-base);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 var(--s4); }
+  section { scroll-margin-top: 90px; }
+
+  .kicker {
+    font-family: 'Spline Sans Mono', monospace;
+    font-size: var(--text-xs);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: block;
+    margin-bottom: var(--s2);
+  }
+
+  h2.section-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: var(--text-2xl);
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    margin-bottom: var(--s4);
+  }
+  h2.section-title em { font-style: italic; color: var(--accent); }
+
+  /* ---------- NAV ---------- */
+  nav.site {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    max-width: 1080px; margin: 0 auto; padding: 1rem var(--s4);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .nav-logo {
+    font-family: 'Fraunces', serif; font-style: italic;
+    font-size: var(--text-lg); color: var(--ink); text-decoration: none;
+  }
+  .nav-links { display: flex; gap: var(--s3); list-style: none; align-items: center; }
+  .nav-links a {
+    font-size: var(--text-sm); font-weight: 500;
+    color: var(--ink); text-decoration: none; position: relative;
+  }
+  .nav-links a:not(.btn)::after {
+    content: ''; position: absolute; left: 0; bottom: -4px; height: 2px; width: 0;
+    background: var(--accent); transition: width 0.25s var(--ease);
+  }
+  .nav-links a:not(.btn):hover::after { width: 100%; }
+
+  /* ---------- BUTTONS ---------- */
+  .btn {
+    display: inline-block;
+    font-family: 'Archivo', sans-serif; font-weight: 600; font-size: var(--text-sm);
+    padding: 0.8rem 1.6rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid var(--ink);
+    transition: all 0.22s var(--ease);
+  }
+  .btn-primary { background: var(--ink); color: #fff; }
+  .btn-primary:hover { background: var(--accent); border-color: var(--accent); transform: translateY(-2px); }
+  .btn-ghost { background: transparent; color: var(--ink); }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+  .nav-links .btn { padding: 0.5rem 1.1rem; }
+  .nav-links a.btn-primary { color: #fff; }
+  .nav-links a.btn-primary:hover { color: #fff; }
+
+  /* ---------- HERO ---------- */
+  .hero { padding: var(--s7) 0 var(--s6); border-bottom: 1px solid var(--line); }
+  .hero h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 350;
+    font-size: clamp(2.6rem, 7vw, var(--text-4xl));
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+    max-width: 15ch;
+  }
+  .hero h1 em { font-style: italic; color: var(--accent); }
+  .hero .lede {
+    color: var(--ink-soft); max-width: 56ch;
+    margin-top: var(--s3); font-size: var(--text-lg); line-height: 1.5;
+  }
+  .hero .cta-row { margin-top: var(--s4); display: flex; gap: var(--s2); flex-wrap: wrap; }
+  .hero .meta-row {
+    margin-top: var(--s5);
+    display: flex; gap: var(--s4); flex-wrap: wrap;
+    font-family: 'Spline Sans Mono', monospace; font-size: var(--text-xs);
+    color: var(--ink-soft); letter-spacing: 0.08em;
+  }
+  .hero .meta-row span::before { content: '● '; color: var(--accent); font-size: 0.6em; vertical-align: 2px; }
+
+  /* ---------- STATS BAND ---------- */
+  .stats-band { padding: var(--s5) 0; border-bottom: 1px solid var(--line); }
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s2); }
+  .stat {
+    border: 1px solid var(--line); border-radius: var(--radius);
+    padding: var(--s3); background: var(--paper);
+    transition: all 0.25s var(--ease);
+  }
+  .stat:hover { border-color: var(--accent); transform: translateY(-3px); }
+  .stat .num { font-family:'Fraunces',serif; font-size: var(--text-2xl); line-height: 1; color: var(--accent); }
+  .stat .lbl { font-size: var(--text-sm); color: var(--ink-soft); margin-top: var(--s1); }
+
+  /* ---------- ABOUT ---------- */
+  .about { padding: var(--s6) 0; border-bottom: 1px solid var(--line); }
+  .about-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--s6); }
+  .about-main p { margin-bottom: var(--s2); max-width: 58ch; }
+  .about-main strong { font-weight: 600; }
+  .fact { border-top: 1px dashed var(--line); padding: var(--s2) 0; }
+  .fact:first-child { border-top: 0; padding-top: 0; }
+  .fact .f-label {
+    font-family:'Spline Sans Mono',monospace; font-size: var(--text-xs);
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent);
+    display: block; margin-bottom: 0.3rem;
+  }
+  .fact .f-body { font-size: var(--text-sm); color: var(--ink-soft); }
+
+  /* ---------- CASE STUDIES ---------- */
+  .cases { padding: var(--s6) 0; border-bottom: 1px solid var(--line); }
+  .case {
+    display: grid; grid-template-columns: 1.3fr 1fr; gap: var(--s4);
+    border: 1px solid var(--line); border-radius: var(--radius);
+    background: var(--paper-deep); padding: var(--s4);
+    margin-bottom: var(--s3);
+    transition: all 0.25s var(--ease);
+  }
+  .case:hover { border-color: var(--accent); }
+  .case h3 { font-family:'Fraunces',serif; font-size: var(--text-xl); font-weight: 400; line-height: 1.15; margin-bottom: var(--s2); }
+  .case p { font-size: var(--text-sm); color: var(--ink-soft); margin-bottom: var(--s1); }
+  .case ul { list-style: none; margin-top: var(--s2); }
+  .case ul li { font-size: var(--text-sm); color: var(--ink-soft); padding-left: 1.2em; position: relative; margin-bottom: 0.4rem; }
+  .case ul li::before { content: '→'; position: absolute; left: 0; color: var(--accent); }
+  .case .metrics {
+    display: flex; flex-direction: column; gap: var(--s3); justify-content: center;
+    border-left: 1px dashed var(--line); padding-left: var(--s4);
+  }
+  .case .metric .num { font-family:'Fraunces',serif; font-size: var(--text-xl); color: var(--accent); line-height: 1.05; }
+  .case .metric .lbl { font-size: var(--text-xs); font-family:'Spline Sans Mono',monospace; color: var(--ink-soft); margin-top: 0.25rem; }
+
+  /* ---------- EXPERIENCE ---------- */
+  .experience { padding: var(--s6) 0; border-bottom: 1px solid var(--line); }
+  .tl-wrap { border-left: 2px solid var(--line); max-width: 720px; }
+  .tl { padding: 0 0 var(--s5) var(--s4); position: relative; }
+  .tl:last-child { padding-bottom: 0; }
+  .tl::before {
+    content:''; position: absolute; left: -6px; top: 7px;
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--accent);
+  }
+  .tl .when { font-family:'Spline Sans Mono',monospace; font-size: var(--text-xs); color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; }
+  .tl h3 { font-family:'Archivo'; font-size: var(--text-lg); font-weight: 600; margin: 0.35rem 0 0.1rem; }
+  .tl .org { color: var(--ink-soft); font-size: var(--text-sm); margin-bottom: var(--s1); }
+  .tl p, .tl li { font-size: var(--text-sm); color: var(--ink-soft); }
+  .tl ul { list-style: none; margin-top: var(--s1); }
+  .tl ul li { padding-left: 1.2em; position: relative; margin-bottom: 0.35rem; }
+  .tl ul li::before { content: '→'; position: absolute; left: 0; color: var(--accent); }
+
+  /* ---------- ADVISORY ---------- */
+  .advisory { padding: var(--s6) 0; border-bottom: 1px solid var(--line); }
+  .adv-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s3); }
+  .adv { border-top: 3px solid var(--accent); padding-top: var(--s2); }
+  .adv h3 { font-family: 'Fraunces', serif; font-weight: 500; font-size: var(--text-lg); line-height: 1.25; margin-bottom: 0.3rem; }
+  .adv .role { font-family:'Spline Sans Mono',monospace; font-size: var(--text-xs); color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; }
+  .adv p { font-size: var(--text-sm); color: var(--ink-soft); margin-top: var(--s1); }
+
+  /* ---------- SKILLS ---------- */
+  .skills { padding: var(--s6) 0; border-bottom: 1px solid var(--line); }
+  .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s5); }
+  .skill-group h3 {
+    font-family:'Spline Sans Mono',monospace; font-size: var(--text-xs); font-weight: 500;
+    letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-soft);
+    margin-bottom: var(--s2);
+  }
+  .tag {
+    display: inline-block;
+    font-family: 'Spline Sans Mono', monospace; font-size: var(--text-xs);
+    padding: 0.3rem 0.75rem; margin: 0 0.4rem 0.5rem 0;
+    border: 1px solid var(--line); border-radius: 100px;
+    color: var(--ink-soft);
+    transition: all 0.22s var(--ease);
+  }
+  .tag:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-tint); }
+  .lang-row { display: flex; justify-content: space-between; border-top: 1px dashed var(--line); padding: 0.55rem 0; font-size: var(--text-sm); }
+  .lang-row:first-of-type { border-top: 0; }
+  .lang-row .level { font-family:'Spline Sans Mono',monospace; font-size: var(--text-xs); color: var(--accent); }
+
+  /* ---------- EDUCATION ---------- */
+  .edu { padding: var(--s6) 0; border-bottom: 1px solid var(--line); }
+  .edu-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--s3); }
+  .edu-item { border: 1px solid var(--line); border-radius: var(--radius); padding: var(--s3); transition: all .25s var(--ease); }
+  .edu-item:hover { border-color: var(--accent); }
+  .edu-item .deg { font-weight: 600; font-size: var(--text-sm); }
+  .edu-item .school { font-size: var(--text-sm); color: var(--ink-soft); }
+  .edu-item .note { font-family:'Spline Sans Mono',monospace; font-size: var(--text-xs); color: var(--accent); margin-top: 0.4rem; }
+
+  /* ---------- CONTACT ---------- */
+  .contact { padding: var(--s7) 0; text-align: left; }
+  .contact h2 {
+    font-family: 'Fraunces', serif; font-weight: 350;
+    font-size: clamp(2.2rem, 5.5vw, var(--text-3xl));
+    line-height: 1.05; letter-spacing: -0.02em; max-width: 18ch;
+  }
+  .contact h2 em { font-style: italic; color: var(--accent); }
+  .contact p { color: var(--ink-soft); max-width: 52ch; margin-top: var(--s3); }
+  .contact .cta-row { margin-top: var(--s4); display: flex; gap: var(--s2); flex-wrap: wrap; }
+
+  footer.site {
+    border-top: 1px solid var(--line);
+    padding: var(--s4) 0;
+  }
+  .footer-inner {
+    max-width: 1080px; margin: 0 auto; padding: 0 var(--s4);
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: var(--s2);
+    font-family:'Spline Sans Mono',monospace; font-size: var(--text-xs); color: var(--ink-soft);
+  }
+  .footer-inner a { color: var(--ink-soft); text-decoration: none; }
+  .footer-inner a:hover { color: var(--accent); }
+
+  /* ---------- REVEAL ANIMATION ---------- */
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s var(--ease), transform 0.6s var(--ease); }
+  .reveal.in { opacity: 1; transform: none; }
+  .hero .reveal { transition-duration: 0.7s; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    * { transition: none !important; }
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 860px) {
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .about-grid, .skills-grid { grid-template-columns: 1fr; gap: var(--s4); }
+    .adv-grid { grid-template-columns: 1fr; }
+    .case { grid-template-columns: 1fr; }
+    .case .metrics { border-left: 0; padding-left: 0; border-top: 1px dashed var(--line); padding-top: var(--s3); flex-direction: row; flex-wrap: wrap; gap: var(--s4); }
+    .edu-grid { grid-template-columns: 1fr; }
+    .nav-links li.hide-mobile { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="site">
+  <div class="nav-inner">
+    <a href="#top" class="nav-logo">Samantha Merlivat</a>
+    <ul class="nav-links">
+      <li class="hide-mobile"><a href="#about">About</a></li>
+      <li class="hide-mobile"><a href="#work">Case Studies</a></li>
+      <li class="hide-mobile"><a href="#experience">Experience</a></li>
+      <li><a href="#contact" class="btn btn-primary">Work with me</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <h1 class="reveal">Strategy on paper, <em>momentum</em> in practice.</h1>
+    <p class="lede reveal">I'm a Go-to-Market &amp; Strategy leader who has built a company from zero, taken products to market in three industries, and turned chaos into growth engines — as founder, interim CMO, and advisor.</p>
+    <div class="cta-row reveal">
+      <a href="#work" class="btn btn-primary">Show me the receipts</a>
+      <a href="https://www.linkedin.com/in/samantha-merlivat/" target="_blank" rel="noopener" class="btn btn-ghost">Connect on LinkedIn</a>
+    </div>
+    <div class="meta-row reveal">
+      <span>EdTech · Adtech · Web3</span>
+      <span>Entrepreneurship · Operations · Product Leadership · Scaling</span>
+    </div>
+  </div>
+</header>
+
+<section class="stats-band">
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat reveal"><div class="num">90k+</div><div class="lbl">App downloads as solo founder, twice Apple's App of the Day</div></div>
+      <div class="stat reveal"><div class="num">3.7×</div><div class="lbl">User base growth in 3 months as interim CMO</div></div>
+      <div class="stat reveal"><div class="num">192%</div><div class="lbl">Of registration target hit for Solana Summit Germany</div></div>
+      <div class="stat reveal"><div class="num">4</div><div class="lbl">Countries where I've built, advised and shipped</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <span class="kicker reveal">01 · About</span>
+    <h2 class="section-title reveal">Bias for action, appetite for <em>chaos.</em></h2>
+    <div class="about-grid">
+      <div class="about-main reveal">
+        <p>I'm most excited in fast-paced environments where <strong>chaos needs to be organised</strong>, problems need to be solved, and creative solutions are encouraged.</p>
+        <p>I've built a company as a solo founder — developing a product from scratch, bringing it to market, and leading the team that scaled it. Before that, I advised the world's largest Adtech companies at Forrester; since, I've run growth for a consumer app and lead ecosystem programs for Solana in Germany.</p>
+        <p>What ties it together: I connect easily with people, and I'm particularly strong at <strong>communication and stakeholder management</strong> — from dev teams and designers to Fortune 500 boards and government juries.</p>
+      </div>
+      <div class="reveal">
+        <div class="fact">
+          <span class="f-label">Currently</span>
+          <span class="f-body">Head of Growth and Operations · Business Advisor</span>
+        </div>
+        <div class="fact">
+          <span class="f-label">Languages</span>
+          <span class="f-body">French (native), English, German, Spanish, Korean, Dutch</span>
+        </div>
+        <div class="fact">
+          <span class="f-label">Off hours</span>
+          <span class="f-body">Fitness, art &amp; design, blockchain, running a business book club and founder community</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cases" id="work">
+  <div class="wrap">
+    <span class="kicker reveal">02 · Case Studies</span>
+    <h2 class="section-title reveal">Proof, with <em>numbers.</em></h2>
+
+    <div class="case reveal">
+      <div>
+        <span class="kicker">GoLexic · Founder &amp; CEO · 2019–2025</span>
+        <h3>Building a growth engine without growing the budget</h3>
+        <p>GoLexic is a personalised, speech-based reading intervention app for dyslexic children, in English and German. As solo founder I led product and GTM end to end.</p>
+        <ul>
+          <li>Built a closed-loop B2C marketing system: segmentation → messaging → attribution</li>
+          <li>Led a team of 5 developers &amp; a designer through the full product lifecycle</li>
+          <li>Apple "App of the Day" in 2024 &amp; 2025; Startup of the Year (CONTENTshift 2023)</li>
+        </ul>
+      </div>
+      <div class="metrics">
+        <div class="metric"><div class="num">+30%</div><div class="lbl">Revenue in 2024, flat ad spend</div></div>
+        <div class="metric"><div class="num">43→71%</div><div class="lbl">30-day retention</div></div>
+        <div class="metric"><div class="num">+21%</div><div class="lbl">Customer LTV</div></div>
+      </div>
+    </div>
+
+    <div class="case reveal">
+      <div>
+        <span class="kicker">Solana Superteam Germany · Growth &amp; Events Lead · 2025–now</span>
+        <h3>Making a tech summit trend on X</h3>
+        <p>I lead programs bringing new founders and partners into the Solana ecosystem in Germany — including full ownership of Solana Summit Germany 2026.</p>
+        <ul>
+          <li>Video campaigns, a Creator program, social &amp; Telegram marketing</li>
+          <li>11 ecosystem partnerships secured — from free phones to wearables</li>
+          <li>Marketing &amp; program development for the Build Station Accelerator</li>
+        </ul>
+      </div>
+      <div class="metrics">
+        <div class="metric"><div class="num">2,500+</div><div class="lbl">Registrations vs. 1,300 target</div></div>
+        <div class="metric"><div class="num">3,000+</div><div class="lbl">Partner giveaway items secured</div></div>
+        <div class="metric"><div class="num">Trending</div><div class="lbl">On X.com after the Summit</div></div>
+      </div>
+    </div>
+
+    <div class="case reveal">
+      <div>
+        <span class="kicker">bookie UG · Interim CMO · Dec 2024 – Feb 2025</span>
+        <h3>3.7× the user base in one quarter</h3>
+        <p>Brought in to accelerate growth for a consumer app, I led performance marketing and influencer relationships through a decisive three-month sprint.</p>
+        <ul>
+          <li>Owned paid acquisition strategy and execution</li>
+          <li>Built and managed influencer partnerships end to end</li>
+        </ul>
+      </div>
+      <div class="metrics">
+        <div class="metric"><div class="num">30k→110k</div><div class="lbl">Users in 3 months</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="experience" id="experience">
+  <div class="wrap">
+    <span class="kicker reveal">03 · Experience</span>
+    <h2 class="section-title reveal">Four countries, three industries, <em>one throughline.</em></h2>
+    <div class="tl-wrap">
+      <div class="tl reveal">
+        <span class="when">Apr 2025 — now · Berlin</span>
+        <h3>Growth &amp; Events Lead (Contractor)</h3>
+        <div class="org">Solana | Superteam Germany</div>
+        <p>Leading programs to bring new founders and partners to Solana in Germany — event production, creator marketing, and accelerator program development.</p>
+      </div>
+      <div class="tl reveal">
+        <span class="when">Dec 2024 — Feb 2025 · Berlin</span>
+        <h3>Interim CMO</h3>
+        <div class="org">bookie UG</div>
+        <p>Led performance marketing and influencer relationships; grew the user base from 30,000 to 110,000 in three months.</p>
+      </div>
+      <div class="tl reveal">
+        <span class="when">2019 — 2025 · Berlin</span>
+        <h3>Founder &amp; CEO</h3>
+        <div class="org">GoLexic GmbH</div>
+        <ul>
+          <li>Grew a speech-based reading app for dyslexic children to 90k+ downloads (4.2★)</li>
+          <li>Led a team of 6 through vision, roadmap, prototyping, release and iteration</li>
+          <li>Won Google for Startups (2021), Impact EdTech (2022), Global EdTech Startup Awards (2022), CONTENTshift Startup of the Year (2023)</li>
+        </ul>
+      </div>
+      <div class="tl reveal">
+        <span class="when">2012 — 2017 · London</span>
+        <h3>EMEA Lead — Expert Advisor for Adtech</h3>
+        <div class="org">Forrester Research</div>
+        <ul>
+          <li>Consulted global Adtech companies (&gt;$1B revenue) on product roadmaps &amp; GTM</li>
+          <li>Advised Fortune 500 companies on closed-loop advertising strategy &amp; technology</li>
+          <li>Partnered with sales leadership to shape pipeline opportunities</li>
+        </ul>
+      </div>
+      <div class="tl reveal">
+        <span class="when">2010 — 2012 · Seoul</span>
+        <h3>Business Development Executive</h3>
+        <div class="org">Siemens Ltd. Seoul</div>
+        <ul>
+          <li>Led stakeholder alignment during the post-merger integration of a Korean company</li>
+          <li>Led South East Asian market intelligence &amp; forecast development</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="advisory">
+  <div class="wrap">
+    <span class="kicker reveal">04 · Advisory &amp; Ecosystem</span>
+    <h2 class="section-title reveal">Trusted in the <em>room.</em></h2>
+    <div class="adv-grid">
+      <div class="adv reveal">
+        <span class="role">2024 — 2026</span>
+        <h3>European Commission</h3>
+        <p>Business Advisor</p>
+      </div>
+      <div class="adv reveal">
+        <span class="role">2024 — 2025</span>
+        <h3>BMWK — German Ministry for Economic Affairs &amp; Climate</h3>
+        <p>Jury Member</p>
+      </div>
+      <div class="adv reveal">
+        <span class="role">2025</span>
+        <h3>ESCP Business School</h3>
+        <p>Entrepreneurship Programme Mentor</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="skills">
+  <div class="wrap">
+    <span class="kicker reveal">05 · Toolkit</span>
+    <h2 class="section-title reveal">What I <em>work with.</em></h2>
+    <div class="skills-grid">
+      <div class="skill-group reveal">
+        <h3>Craft</h3>
+        <span class="tag">Go-to-Market Strategy</span><span class="tag">Product-Led Growth</span><span class="tag">Performance Marketing</span><span class="tag">Segmentation &amp; Attribution</span><span class="tag">Stakeholder Management</span><span class="tag">Product Delivery (Scrum/Kanban)</span><span class="tag">Event Production</span><span class="tag">Market Intelligence</span>
+        <h3 style="margin-top: var(--s3)">Tools</h3>
+        <span class="tag">Claude Code &amp; Cowork</span><span class="tag">n8n</span><span class="tag">Jira</span><span class="tag">Confluence</span><span class="tag">Mixpanel</span><span class="tag">Firebase</span><span class="tag">Looker Studio</span><span class="tag">GA4</span><span class="tag">Funnel.io</span><span class="tag">Google Cloud (Vertex AI, TTS/STT)</span><span class="tag">Clay</span><span class="tag">Heroku</span>
+      </div>
+      <div class="skill-group reveal">
+        <h3>Languages</h3>
+        <div class="lang-row"><span>French</span><span class="level">Native</span></div>
+        <div class="lang-row"><span>English</span><span class="level">C2</span></div>
+        <div class="lang-row"><span>German</span><span class="level">C1</span></div>
+        <div class="lang-row"><span>Spanish</span><span class="level">C1</span></div>
+        <div class="lang-row"><span>Korean</span><span class="level">B2</span></div>
+        <div class="lang-row"><span>Dutch</span><span class="level">B2</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="edu">
+  <div class="wrap">
+    <span class="kicker reveal">06 · Education</span>
+    <h2 class="section-title reveal">Where it <em>started.</em></h2>
+    <div class="edu-grid">
+      <div class="edu-item reveal">
+        <div class="deg">MSc, Business</div>
+        <div class="school">Sheffield University, UK</div>
+        <div class="note">First Class Honors</div>
+      </div>
+      <div class="edu-item reveal">
+        <div class="deg">BA &amp; MA, EU Political Studies</div>
+        <div class="school">Maastricht University, The Netherlands</div>
+        <div class="note">Cum Laude</div>
+      </div>
+      <div class="edu-item reveal">
+        <div class="deg">BA Political Studies (Erasmus)</div>
+        <div class="school">Universidad Carlos III de Madrid, Spain</div>
+      </div>
+      <div class="edu-item reveal">
+        <div class="deg">Fundamentals of Machine Learning for AI Product Managers</div>
+        <div class="school">Duke University, Coursera</div>
+        <div class="note">Certified 2024</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <span class="kicker reveal">07 · Contact</span>
+    <h2 class="reveal">Have chaos that needs <em>organising?</em></h2>
+    <p class="reveal">I'm open to leadership roles, freelance engagements, and advisory projects — anywhere strategy needs to move from paper to momentum. The fastest way to reach me is LinkedIn.</p>
+    <div class="cta-row reveal">
+      <a href="https://www.linkedin.com/in/samantha-merlivat/" target="_blank" rel="noopener" class="btn btn-primary">Message me on LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="footer-inner">
+    <span>© 2026 Samantha Merlivat · Berlin</span>
+    <a href="https://www.linkedin.com/in/samantha-merlivat/" target="_blank" rel="noopener">LinkedIn ↗</a>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.reveal').forEach((el, i) => {
+    el.style.transitionDelay = (Math.min(i % 6, 4) * 60) + 'ms';
+    io.observe(el);
+  });
+</script>
+
+</body>
+</html>
