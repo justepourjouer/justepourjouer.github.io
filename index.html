@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Samantha Merlivat — Go-to-Market &amp; Strategy Leader</title>
-<meta name="description" content="Samantha Merlivat is a Go-to-Market & Strategy leader in Berlin. Founder, operator and advisor across GTM, operations, program leadership and ecosystem building.">
+<title>Samantha Merlivat — Operations &amp; Go-to-Market Leader</title>
+<meta name="description" content="Samantha Merlivat is an Operations & Go-to-Market leader in Berlin. Founder, operator and advisor across operations, GTM, strategic programs and ecosystem building.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Archivo:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Archivo:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500&family=Bebas+Neue&display=swap" rel="stylesheet">
 <style>
   :root {
     --paper: #FFFFFF;
@@ -84,9 +84,12 @@
     display: flex; justify-content: space-between; align-items: center;
   }
   .nav-logo {
-    font-family: 'Fraunces', serif; font-style: italic;
-    font-size: var(--text-lg); color: var(--ink); text-decoration: none;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.375rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--accent); text-decoration: none; line-height: 1;
+    transition: color 0.22s var(--ease);
   }
+  .nav-logo:hover { color: var(--ink); }
   .nav-links { display: flex; gap: var(--s3); list-style: none; align-items: center; }
   .nav-links a {
     font-size: var(--text-sm); font-weight: 500;
@@ -122,15 +125,19 @@
   .hero h1 {
     font-family: 'Fraunces', serif;
     font-weight: 350;
-    font-size: clamp(2.6rem, 7vw, var(--text-4xl));
+    font-size: clamp(2.08rem, 5.6vw, 3.84rem);
     line-height: 1.02;
     letter-spacing: -0.025em;
-    max-width: 15ch;
+    max-width: 18ch;
   }
   .hero h1 em { font-style: italic; color: var(--accent); }
   .hero .lede {
     color: var(--ink-soft); max-width: 56ch;
-    margin-top: var(--s3); font-size: var(--text-lg); line-height: 1.5;
+    margin-top: var(--s3); font-size: 1.25rem; line-height: 1.5;
+  }
+  .hero .lede-sub {
+    color: var(--ink-soft); max-width: 56ch;
+    margin-top: var(--s2); font-size: var(--text-base);
   }
   .fork {
     margin-top: var(--s5);
@@ -188,7 +195,7 @@
   .problem-q .indicator { color: var(--accent); font-family:'Fraunces',serif; font-size: var(--text-xl); line-height: 1; transition: transform 0.3s var(--ease); flex-shrink: 0; }
   .problem.open .indicator { transform: rotate(45deg); }
   .problem-a { max-height: 0; overflow: hidden; transition: max-height 0.45s var(--ease); }
-  .problem.open .problem-a { max-height: 800px; }
+  .problem.open .problem-a { max-height: 1400px; }
   .problem-a-inner {
     padding: 0 var(--s4) var(--s4);
     display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--s4);
@@ -370,26 +377,27 @@
   <div class="nav-inner">
     <a href="#top" class="nav-logo">Samantha Merlivat</a>
     <ul class="nav-links">
-      <li class="hide-mobile"><a href="#problems">Projects</a></li>
-      <li class="hide-mobile"><a href="#capabilities">Capabilities</a></li>
+      <li class="hide-mobile"><a href="#problems">Problems solved</a></li>
+      <li class="hide-mobile"><a href="#capabilities">Expertise</a></li>
+      <li class="hide-mobile"><a href="#work">Case studies</a></li>
       <li class="hide-mobile"><a href="#experience">Experience</a></li>
-      <li><a href="#contact" class="btn btn-primary">Work with me</a></li>
     </ul>
   </div>
 </nav>
 
 <header class="hero" id="top">
   <div class="wrap">
-    <h1 class="reveal">Strategy, <em>executed.</em></h1>
-    <p class="lede reveal">I'm a Go-to-Market &amp; Strategy leader who has built a company from zero, taken products into new markets, and turned ambitious plans into working systems — as founder, operator, and advisor.</p>
+    <h1 class="reveal">I build the <em>machine</em> that delivers the strategy.</h1>
+    <p class="lede reveal">I lead Operations &amp; Go-to-Market with a strong bias for execution. I built a company from zero — 100k+ users, twice Apple's App of the Day — and I specialise in turning ambitious plans into working systems: the marketing engine that grew GoLexic's revenue 30% a year while cutting ad spend, the 30k→110k user growth delivered in three months as interim CMO at bookie, the 2,800-registration summit executed in three months at Superteam Germany.</p>
+    <p class="lede-sub reveal">In my spare time, I'm a Business Advisor for the EU's Horizon program, a jury member for the German BMWK's funding programs, and a mentor in ESCP Business School's entrepreneurship program.</p>
     <div class="fork reveal">
-      <a class="fork-card" href="#capabilities">
-        <span class="fork-label">Path 01</span>
-        <span class="fork-title">I'm hiring a leader</span>
-      </a>
       <a class="fork-card" href="#problems">
+        <span class="fork-label">Path 01</span>
+        <span class="fork-title">I need something solved</span>
+      </a>
+      <a class="fork-card" href="#capabilities">
         <span class="fork-label">Path 02</span>
-        <span class="fork-title">I have a problem to solve</span>
+        <span class="fork-title">I'm evaluating for a role</span>
       </a>
     </div>
     <div class="meta-row reveal">
@@ -415,12 +423,12 @@
         <div class="problem-a-inner">
           <div>
             <span class="proof-title">How I've solved it</span>
-            <p>I've launched a product from zero into two language markets: positioning, pricing, and an automated marketing system that grew revenue 30% while cutting marketing spend by 20% — with international school partnerships driving adoption.</p>
+            <p>I've launched a product from zero to 100k+ users across six countries in two languages: positioning, pricing, and an automated marketing system that grew revenue 30% while cutting marketing spend by 20% — with school and educational-publisher partnerships driving adoption.</p>
             <p>Most recently, I validated a brand-new enterprise AI product in the German market — building a 160-account pipeline from zero, closing its first customer, and feeding what I heard in sales conversations back into the product roadmap — on a one-day-a-week engagement.</p>
-            <p>Before that, I spent five years at Forrester advising global Adtech companies (&gt;$1B revenue) and Fortune 500 brands on exactly this: GTM strategy, product roadmaps, and market positioning.</p>
+            <p>Before that, I spent five years at Forrester advising the world's largest media and Adtech companies (&gt;$1B revenue) on exactly this: GTM strategy, product strategy, and market positioning.</p>
           </div>
           <div class="problem-metrics">
-            <div class="metric"><div class="num">0→90k</div><div class="lbl">Downloads in 2 markets</div></div>
+            <div class="metric"><div class="num">0→100k</div><div class="lbl">Users in 2 markets</div></div>
             <div class="metric"><div class="num">0→1</div><div class="lbl">First customer for a new AI SaaS</div></div>
             <div class="metric"><div class="num">&gt;$1B</div><div class="lbl">Clients advised on GTM</div></div>
           </div>
@@ -438,9 +446,9 @@
         <div class="problem-a-inner">
           <div>
             <span class="proof-title">How I've solved it</span>
-            <p>Speed without systems breaks things. I build the systems while keeping the speed: at GoLexic, I built the full delivery operation — a team of 6 shipping continuously through Scrum/Kanban, from roadmap to release to iteration — with systems that lifted 30-day retention from 43% to 71%.</p>
+            <p>Speed without systems breaks things. I build the systems while keeping the speed: at GoLexic, I built the full delivery operation — a team of 6 shipping continuously in two-week sprints (Scrum/Kanban), from roadmap to release to iteration — with systems that lifted 30-day retention from 43% to 71%.</p>
             <p>For Solana, I planned and executed Solana Summit Germany in three months — production, marketing, and partnerships running in parallel — more than doubling the registration target.</p>
-            <p>And at Siemens, I ran stakeholder alignment through a post-merger integration — execution under maximum organisational complexity.</p>
+            <p>And at Siemens, I ran stakeholder alignment through a post-merger integration — execution under maximum organisational complexity across three regions.</p>
           </div>
           <div class="problem-metrics">
             <div class="metric"><div class="num">3 months</div><div class="lbl">Concept to a 2,800-registration summit</div></div>
@@ -483,12 +491,12 @@
         <div class="problem-a-inner">
           <div>
             <span class="proof-title">How I've solved it</span>
-            <p>Products win when other people have a stake in their success. For Solana Summit Germany, I secured 14 partners and sponsors (3,000+ giveaway items, from phones to wearables) and built a Creator program. To develop the Solana ecosystem in Germany, I organise curated events with C-level executives and investors.</p>
-            <p>I've been building ecosystems for years: a founder community and business book club in Berlin, advisory relationships from Fortune 500 boardrooms to the European Commission, and pipeline partnerships with sales leadership at Forrester.</p>
+            <p>Products win when other people have a stake in their success. As a founder, I grew GoLexic's adoption by building an ecosystem around our mission: schools, educational publishers, parent organisations, institutions, and corporates. What did this look like? I negotiated with General Electric to donate unused iPads to GoLexic, and created a free lending program that put devices into classrooms — making the app accessible for students.</p>
+            <p>For Solana Summit Germany, I secured 14 partners and sponsors (3,000+ giveaway items, from phones to wearables) and built a Creator program. To develop the Solana ecosystem in Germany, I organise curated events with C-level executives and investors.</p>
           </div>
           <div class="problem-metrics">
             <div class="metric"><div class="num">14</div><div class="lbl">Summit partners &amp; sponsors</div></div>
-            <div class="metric"><div class="num">3,000+</div><div class="lbl">Partner items secured</div></div>
+            <div class="metric"><div class="num">3,000+</div><div class="lbl">Free giveaway items secured</div></div>
           </div>
         </div>
       </div>
@@ -498,32 +506,185 @@
 
 <section class="pillars" id="capabilities">
   <div class="wrap">
-    <span class="kicker reveal">02 · If you're hiring</span>
+    <span class="kicker reveal">02 · Expertise</span>
     <h2 class="section-title reveal">Four things I do <em>unusually well.</em></h2>
     <div class="pillar-grid">
       <div class="pillar reveal">
         <span class="p-num">01</span>
         <h3>Executing Go-to-Market</h3>
         <p>Positioning, pricing, launch, and growth marketing — proven as founder (GoLexic), interim CMO (bookie), and enterprise BD lead (COMPUTD).</p>
-        <div class="p-proof"><strong>0→90k</strong> downloads in two markets; <strong>3.7×</strong> users in 90 days as interim CMO; first customer for a new AI SaaS.</div>
+        <div class="p-proof"><strong>0→100k</strong> users in two markets (GoLexic); <strong>3.7×</strong> users in 90 days (bookie); first customer for a new AI SaaS (COMPUTD).</div>
       </div>
       <div class="pillar reveal">
         <span class="p-num">02</span>
         <h3>Scaling Operations</h3>
         <p>Turning plans into shipped work: five years of product delivery at GoLexic, post-merger integration at Siemens, a summit produced in three months for Solana.</p>
-        <div class="p-proof"><strong>3 months</strong> from concept to a 2,800-registration summit; 30-day retention lifted 43→71%.</div>
+        <div class="p-proof">30-day retention lifted <strong>43→71%</strong> (GoLexic); <strong>3 months</strong> from concept to a 2,800-registration summit (Solana).</div>
       </div>
       <div class="pillar reveal">
         <span class="p-num">03</span>
         <h3>Leading Strategic Programs</h3>
         <p>Programs owned from concept to delivery: Solana Summit Germany 2026, Build Station Accelerator programming, founder mentoring at ESCP.</p>
-        <div class="p-proof"><strong>215%</strong> of registration target; viral on X in the week before the Summit.</div>
+        <div class="p-proof"><strong>215%</strong> of registration target, viral on X in the week before the event (Solana Summit Germany).</div>
       </div>
       <div class="pillar reveal">
         <span class="p-num">04</span>
         <h3>Building Partnerships &amp; Ecosystems</h3>
-        <p>The network that gives a product momentum: Summit partners and sponsors, a Creator program, and curated C-level events for the Solana ecosystem in Germany.</p>
-        <div class="p-proof"><strong>14</strong> partners and sponsors for one summit; advisor to the European Commission.</div>
+        <p>The network that gives a product momentum: publisher license deals, school partnerships, and a corporate device program with GE at GoLexic; sponsors, creators, and C-level events for Solana in Germany.</p>
+        <div class="p-proof">Advisor to the European Commission; <strong>14</strong> partners and sponsors for one summit (Solana).</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cases" id="work">
+  <div class="wrap">
+    <span class="kicker reveal">03 · Case Studies</span>
+    <h2 class="section-title reveal">Proof, with <em>numbers.</em></h2>
+
+    <div class="case reveal">
+      <div>
+        <span class="ctx-tag">Zero-to-one</span>
+        <span class="kicker">GoLexic · Founder &amp; CEO · 2019–2025</span>
+        <h3>Building a growth engine without growing the budget</h3>
+        <p>GoLexic is a personalised, speech-based reading intervention app for dyslexic children, in English and German. As solo founder, I built a team of 8 and led go-to-market, product development, and marketing across six countries and two languages.</p>
+        <ul>
+          <li>Led strategy and commercialisation — expanding into multiple markets and building partnerships with leading educational publishers</li>
+          <li>Managed all aspects of product development: pedagogical content, license deals, product strategy, and product analytics</li>
+          <li>Raised over €500k in capital — leading financial modeling, due diligence, and fundraising</li>
+          <li>Apple "App of the Day" in 2025 &amp; 2026; Startup of the Year (CONTENTshift 2023)</li>
+        </ul>
+      </div>
+      <div class="metrics">
+        <div class="metric"><div class="num">+30%</div><div class="lbl">Revenue in 2024, ad spend −20%</div></div>
+        <div class="metric"><div class="num">43→71%</div><div class="lbl">30-day retention</div></div>
+        <div class="metric"><div class="num">+21%</div><div class="lbl">Customer LTV</div></div>
+      </div>
+    </div>
+
+    <div class="case reveal">
+      <div>
+        <span class="ctx-tag">Scale-up sprint</span>
+        <span class="kicker">bookie UG · Interim CMO · Dec 2025 – Feb 2026</span>
+        <h3>3.7× the user base in one quarter</h3>
+        <p>Brought in to accelerate growth for a consumer app, I led performance marketing and influencer relationships through a decisive three-month sprint.</p>
+        <ul>
+          <li>Owned paid acquisition strategy and execution</li>
+          <li>Built and managed influencer partnerships end to end</li>
+        </ul>
+      </div>
+      <div class="metrics">
+        <div class="metric"><div class="num">30k→110k</div><div class="lbl">Users in 3 months</div></div>
+      </div>
+    </div>
+
+    <div class="case reveal">
+      <div>
+        <span class="ctx-tag">Scale-up sprint</span>
+        <span class="kicker">Solana Superteam Germany · Growth &amp; Programs Lead · 2025–now</span>
+        <h3>Making a tech summit trend on X</h3>
+        <p>I lead programs bringing new founders and partners into the Solana ecosystem in Germany — including full ownership of Solana Summit Germany 2026.</p>
+        <ul>
+          <li>Video campaigns, a Creator program, social &amp; Telegram marketing</li>
+          <li>14 partners and sponsors secured — from free phones to wearables</li>
+          <li>Marketing &amp; program development for the Build Station Accelerator</li>
+        </ul>
+      </div>
+      <div class="metrics">
+        <div class="metric"><div class="num">2,800</div><div class="lbl">Registrations vs. 1,300 target</div></div>
+        <div class="metric"><div class="num">3,000+</div><div class="lbl">Partner giveaway items secured</div></div>
+        <div class="metric"><div class="num">Trending</div><div class="lbl">On X.com after the Summit</div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="experience" id="experience">
+  <div class="wrap">
+    <span class="kicker reveal">04 · Experience</span>
+    <h2 class="section-title reveal">Four countries, four industries, <em>one throughline.</em></h2>
+    <div class="tl-wrap">
+      <div class="tl reveal">
+        <span class="when">Oct 2025 — now · Berlin</span>
+        <h3>Growth &amp; Programs Lead</h3>
+        <div class="org">Solana | Superteam Germany</div>
+        <p>Leading programs to bring new founders and partners to Solana in Germany — event production, creator marketing, and accelerator program development.</p>
+      </div>
+      <div class="tl reveal">
+        <span class="when">Dec 2025 — Feb 2026 · Berlin</span>
+        <h3>Interim CMO</h3>
+        <div class="org">bookie UG</div>
+        <p>bookie is a reading tracking app.</p>
+        <ul>
+          <li>Led performance marketing and Creator program; grew the user base from 30,000 to 110,000 in three months</li>
+          <li>Implemented systems to automate attribution measurement and inform marketing decisions</li>
+        </ul>
+      </div>
+      <div class="tl reveal">
+        <span class="when">May — Nov 2025 · Germany · Fractional, 1 day/week</span>
+        <h3>Business Development Lead — Germany</h3>
+        <div class="org">COMPUTD BV</div>
+        <p>COMPUTD builds custom AI solutions for enterprise. I led market validation and GTM for Apollo, their first SaaS product — an AI scheduling platform.</p>
+        <ul>
+          <li>Built a 160-account pipeline of German call centers from zero, generating 40+ product demos through direct outbound</li>
+          <li>Closed Apollo's first trial customer — the product's first commercial validation</li>
+          <li>Surfaced critical user feedback through sales conversations, used to prioritise the product development roadmap</li>
+        </ul>
+      </div>
+      <div class="tl reveal">
+        <span class="when">2019 — 2025 · Berlin</span>
+        <h3>Founder &amp; CEO</h3>
+        <div class="org">GoLexic GmbH</div>
+        <ul>
+          <li>Grew a speech-based reading app for dyslexic children to 100k+ users (4.2★)</li>
+          <li>Led Product Development with a team of 6 through vision, roadmap, prototyping, release and iteration</li>
+          <li>Raised over €500k in capital — leading financial modeling, due diligence, and fundraising</li>
+          <li>Won Google for Startups (2021), the EU Impact EdTech Accelerator (2022), Global EdTech Startup Awards (2022), CONTENTshift Startup of the Year (2023), Apple App of the Day (2025 and 2026)</li>
+        </ul>
+      </div>
+      <div class="tl reveal">
+        <span class="when">2012 — 2018 · London</span>
+        <h3>EMEA Lead — Expert Advisor for Adtech</h3>
+        <div class="org">Forrester Research</div>
+        <ul>
+          <li>Consulted global Adtech companies (&gt;$1B revenue) on product roadmaps &amp; GTM</li>
+          <li>Advised Fortune 500 companies on closed-loop advertising strategy &amp; technology</li>
+          <li>Partnered with sales leadership to shape pipeline opportunities</li>
+        </ul>
+      </div>
+      <div class="tl reveal">
+        <span class="when">2010 — 2012 · Seoul</span>
+        <h3>Business Development Executive</h3>
+        <div class="org">Siemens Ltd. Seoul</div>
+        <ul>
+          <li>Led stakeholder alignment during the post-merger integration of a Korean company</li>
+          <li>Led South East Asian market intelligence &amp; forecast development</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="advisory">
+  <div class="wrap">
+    <span class="kicker reveal">05 · Advisory</span>
+    <h2 class="section-title reveal"><em>Giving</em> back.</h2>
+    <div class="adv-grid">
+      <div class="adv reveal">
+        <span class="role">2024 — 2026</span>
+        <h3>European Commission</h3>
+        <p>Startup Business Advisor for the EU Horizon program</p>
+      </div>
+      <div class="adv reveal">
+        <span class="role">2024 — 2025</span>
+        <h3>BMWK — German Ministry for Economic Affairs &amp; Climate</h3>
+        <p>Jury Member</p>
+      </div>
+      <div class="adv reveal">
+        <span class="role">2025</span>
+        <h3>ESCP Business School</h3>
+        <p>Entrepreneurship Programme Mentor</p>
       </div>
     </div>
   </div>
@@ -531,8 +692,8 @@
 
 <section class="about" id="about">
   <div class="wrap">
-    <span class="kicker reveal">03 · About</span>
-    <h2 class="section-title reveal">Bias for action, <em>order</em> from chaos.</h2>
+    <span class="kicker reveal">06 · About</span>
+    <h2 class="section-title reveal">Finding opportunity in <em>chaos.</em></h2>
     <div class="about-grid">
       <div class="about-main reveal">
         <p>I'm most excited in fast-paced environments where <strong>chaos needs to be organised</strong>, problems need to be solved, and creative solutions are encouraged.</p>
@@ -557,187 +718,16 @@
   </div>
 </section>
 
-<section class="cases" id="work">
-  <div class="wrap">
-    <span class="kicker reveal">04 · Case Studies</span>
-    <h2 class="section-title reveal">Proof, with <em>numbers.</em></h2>
-
-    <div class="case reveal">
-      <div>
-        <span class="ctx-tag">Zero-to-one</span>
-        <span class="kicker">GoLexic · Founder &amp; CEO · 2019–2025</span>
-        <h3>Building a growth engine without growing the budget</h3>
-        <p>GoLexic is a personalised, speech-based reading intervention app for dyslexic children, in English and German. As solo founder I led product and GTM end to end.</p>
-        <ul>
-          <li>Built a closed-loop B2C marketing system: segmentation → messaging → attribution</li>
-          <li>Led a team of 5 developers &amp; a designer through the full product lifecycle</li>
-          <li>Apple "App of the Day" in 2024 &amp; 2025; Startup of the Year (CONTENTshift 2023)</li>
-        </ul>
-      </div>
-      <div class="metrics">
-        <div class="metric"><div class="num">+30%</div><div class="lbl">Revenue in 2024, ad spend −20%</div></div>
-        <div class="metric"><div class="num">43→71%</div><div class="lbl">30-day retention</div></div>
-        <div class="metric"><div class="num">+21%</div><div class="lbl">Customer LTV</div></div>
-      </div>
-    </div>
-
-    <div class="case reveal">
-      <div>
-        <span class="ctx-tag">Scale-up sprint</span>
-        <span class="kicker">Solana Superteam Germany · Growth &amp; Events Lead · 2025–now</span>
-        <h3>Making a tech summit trend on X</h3>
-        <p>I lead programs bringing new founders and partners into the Solana ecosystem in Germany — including full ownership of Solana Summit Germany 2026.</p>
-        <ul>
-          <li>Video campaigns, a Creator program, social &amp; Telegram marketing</li>
-          <li>14 partners and sponsors secured — from free phones to wearables</li>
-          <li>Marketing &amp; program development for the Build Station Accelerator</li>
-        </ul>
-      </div>
-      <div class="metrics">
-        <div class="metric"><div class="num">2,800</div><div class="lbl">Registrations vs. 1,300 target</div></div>
-        <div class="metric"><div class="num">3,000+</div><div class="lbl">Partner giveaway items secured</div></div>
-        <div class="metric"><div class="num">Trending</div><div class="lbl">On X.com after the Summit</div></div>
-      </div>
-    </div>
-
-    <div class="case reveal">
-      <div>
-        <span class="ctx-tag">Scale-up sprint</span>
-        <span class="kicker">bookie UG · Interim CMO · Dec 2024 – Feb 2025</span>
-        <h3>3.7× the user base in one quarter</h3>
-        <p>Brought in to accelerate growth for a consumer app, I led performance marketing and influencer relationships through a decisive three-month sprint.</p>
-        <ul>
-          <li>Owned paid acquisition strategy and execution</li>
-          <li>Built and managed influencer partnerships end to end</li>
-        </ul>
-      </div>
-      <div class="metrics">
-        <div class="metric"><div class="num">30k→110k</div><div class="lbl">Users in 3 months</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="experience" id="experience">
-  <div class="wrap">
-    <span class="kicker reveal">05 · Experience</span>
-    <h2 class="section-title reveal">Four countries, four industries, <em>one throughline.</em></h2>
-    <div class="tl-wrap">
-      <div class="tl reveal">
-        <span class="when">Apr 2025 — now · Berlin</span>
-        <h3>Growth &amp; Events Lead (Contractor)</h3>
-        <div class="org">Solana | Superteam Germany</div>
-        <p>Leading programs to bring new founders and partners to Solana in Germany — event production, creator marketing, and accelerator program development.</p>
-      </div>
-      <div class="tl reveal">
-        <span class="when">Apr — Dec 2025 · Germany · Fractional, 1 day/week</span>
-        <h3>Head of Business Development — Germany</h3>
-        <div class="org">COMPUTD BV</div>
-        <p>COMPUTD builds custom AI solutions for enterprise. I led market validation and GTM for Apollo, their first SaaS product — an AI scheduling platform.</p>
-        <ul>
-          <li>Built a 160-account pipeline of German call centers from zero, generating 40+ product demos through direct outbound</li>
-          <li>Closed Apollo's first trial customer — the product's first commercial validation</li>
-          <li>Surfaced critical user feedback through sales conversations, used to prioritise the product development roadmap</li>
-        </ul>
-      </div>
-      <div class="tl reveal">
-        <span class="when">Dec 2024 — Feb 2025 · Berlin</span>
-        <h3>Interim CMO</h3>
-        <div class="org">bookie UG</div>
-        <p>Led performance marketing and influencer relationships; grew the user base from 30,000 to 110,000 in three months.</p>
-      </div>
-      <div class="tl reveal">
-        <span class="when">2019 — 2025 · Berlin</span>
-        <h3>Founder &amp; CEO</h3>
-        <div class="org">GoLexic GmbH</div>
-        <ul>
-          <li>Grew a speech-based reading app for dyslexic children to 90k+ downloads (4.2★)</li>
-          <li>Led a team of 6 through vision, roadmap, prototyping, release and iteration</li>
-          <li>Won Google for Startups (2021), Impact EdTech (2022), Global EdTech Startup Awards (2022), CONTENTshift Startup of the Year (2023)</li>
-        </ul>
-      </div>
-      <div class="tl reveal">
-        <span class="when">2012 — 2017 · London</span>
-        <h3>EMEA Lead — Expert Advisor for Adtech</h3>
-        <div class="org">Forrester Research</div>
-        <ul>
-          <li>Consulted global Adtech companies (&gt;$1B revenue) on product roadmaps &amp; GTM</li>
-          <li>Advised Fortune 500 companies on closed-loop advertising strategy &amp; technology</li>
-          <li>Partnered with sales leadership to shape pipeline opportunities</li>
-        </ul>
-      </div>
-      <div class="tl reveal">
-        <span class="when">2010 — 2012 · Seoul</span>
-        <h3>Business Development Executive</h3>
-        <div class="org">Siemens Ltd. Seoul</div>
-        <ul>
-          <li>Led stakeholder alignment during the post-merger integration of a Korean company</li>
-          <li>Led South East Asian market intelligence &amp; forecast development</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="advisory">
-  <div class="wrap">
-    <span class="kicker reveal">06 · Advisory &amp; Ecosystem</span>
-    <h2 class="section-title reveal">Trusted in the <em>room.</em></h2>
-    <div class="adv-grid">
-      <div class="adv reveal">
-        <span class="role">2024 — 2026</span>
-        <h3>European Commission</h3>
-        <p>Business Advisor</p>
-      </div>
-      <div class="adv reveal">
-        <span class="role">2024 — 2025</span>
-        <h3>BMWK — German Ministry for Economic Affairs &amp; Climate</h3>
-        <p>Jury Member</p>
-      </div>
-      <div class="adv reveal">
-        <span class="role">2025</span>
-        <h3>ESCP Business School</h3>
-        <p>Entrepreneurship Programme Mentor</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="contexts">
-  <div class="wrap">
-    <span class="kicker reveal">07 · Range</span>
-    <h2 class="section-title reveal">Same skills, very different <em>rooms.</em></h2>
-    <div class="ctx-grid">
-      <div class="ctx reveal">
-        <h3>Zero-to-one</h3>
-        <p>Founded, built, and scaled GoLexic from idea to 90k+ downloads.</p>
-      </div>
-      <div class="ctx reveal">
-        <h3>Scale-up sprints</h3>
-        <p>Interim CMO and growth leadership when speed matters most.</p>
-      </div>
-      <div class="ctx reveal">
-        <h3>Enterprise &amp; AI</h3>
-        <p>Strategic counsel to &gt;$1B companies and Fortune 500 brands; market validation for a new enterprise AI SaaS.</p>
-      </div>
-      <div class="ctx reveal">
-        <h3>Public sector</h3>
-        <p>Advisor and jury member for the European Commission and BMWK.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="skills">
   <div class="wrap">
-    <span class="kicker reveal">08 · Toolkit</span>
+    <span class="kicker reveal">07 · Toolkit</span>
     <h2 class="section-title reveal">What I <em>work with.</em></h2>
     <div class="skills-grid">
       <div class="skill-group reveal">
         <h3>Craft</h3>
         <span class="tag">Go-to-Market Strategy</span><span class="tag">Product-Led Growth</span><span class="tag">Performance Marketing</span><span class="tag">Segmentation &amp; Attribution</span><span class="tag">Stakeholder Management</span><span class="tag">Product Delivery (Scrum/Kanban)</span><span class="tag">Event Production</span><span class="tag">Market Intelligence</span>
         <h3 style="margin-top: var(--s3)">Tools</h3>
-        <span class="tag">Claude Code &amp; Cowork</span><span class="tag">n8n</span><span class="tag">Jira</span><span class="tag">Confluence</span><span class="tag">Mixpanel</span><span class="tag">Firebase</span><span class="tag">Looker Studio</span><span class="tag">GA4</span><span class="tag">Funnel.io</span><span class="tag">Google Cloud (Vertex AI, TTS/STT)</span><span class="tag">Clay</span><span class="tag">Heroku</span>
+        <span class="tag">Mixpanel</span><span class="tag">Firebase</span><span class="tag">Looker Studio</span><span class="tag">GA4</span><span class="tag">Funnel.io</span><span class="tag">Google Cloud (Vertex AI, TTS/STT)</span><span class="tag">Clay</span><span class="tag">Heroku</span><span class="tag">Figma</span><span class="tag">Claude Code &amp; Cowork</span><span class="tag">n8n</span>
       </div>
       <div class="skill-group reveal">
         <h3>Languages</h3>
@@ -754,7 +744,7 @@
 
 <section class="edu">
   <div class="wrap">
-    <span class="kicker reveal">09 · Education</span>
+    <span class="kicker reveal">08 · Education</span>
     <h2 class="section-title reveal">Where it <em>started.</em></h2>
     <div class="edu-grid">
       <div class="edu-item reveal">
@@ -776,17 +766,6 @@
         <div class="school">Duke University, Coursera</div>
         <div class="note">Certified 2024</div>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="contact" id="contact">
-  <div class="wrap">
-    <span class="kicker reveal">10 · Contact</span>
-    <h2 class="reveal">Have chaos that needs <em>organising?</em></h2>
-    <p class="reveal">I'm open to leadership roles, freelance engagements, and advisory projects — full-time, interim, or fractional; the model follows the problem. The fastest way to reach me is LinkedIn.</p>
-    <div class="cta-row reveal">
-      <a href="https://www.linkedin.com/in/samantha-merlivat/" target="_blank" rel="noopener" class="btn btn-primary">Message me on LinkedIn</a>
     </div>
   </div>
 </section>
