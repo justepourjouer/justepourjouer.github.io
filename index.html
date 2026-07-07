@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Samantha Merlivat — Go-to-Market &amp; Strategy Leader</title>
-<meta name="description" content="Samantha Merlivat is a Go-to-Market & Strategy leader in Berlin. Founder, growth operator and advisor — from 90k-download apps to trending tech summits.">
+<meta name="description" content="Samantha Merlivat is a Go-to-Market & Strategy leader in Berlin. Founder, operator and advisor across GTM, operations, program leadership and ecosystem building.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Archivo:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -70,6 +70,7 @@
     margin-bottom: var(--s4);
   }
   h2.section-title em { font-style: italic; color: var(--accent); }
+  .section-intro { color: var(--ink-soft); max-width: 58ch; margin: calc(-1 * var(--s3)) 0 var(--s4); }
 
   /* ---------- NAV ---------- */
   nav.site {
@@ -116,8 +117,8 @@
   .nav-links a.btn-primary { color: #fff; }
   .nav-links a.btn-primary:hover { color: #fff; }
 
-  /* ---------- HERO ---------- */
-  .hero { padding: var(--s7) 0 var(--s6); border-bottom: 1px solid var(--line); }
+  /* ---------- HERO + FORK ---------- */
+  .hero { padding: var(--s6) 0 var(--s6); border-bottom: 1px solid var(--line); }
   .hero h1 {
     font-family: 'Fraunces', serif;
     font-weight: 350;
@@ -131,7 +132,33 @@
     color: var(--ink-soft); max-width: 56ch;
     margin-top: var(--s3); font-size: var(--text-lg); line-height: 1.5;
   }
-  .hero .cta-row { margin-top: var(--s4); display: flex; gap: var(--s2); flex-wrap: wrap; }
+  .fork {
+    margin-top: var(--s5);
+    display: grid; grid-template-columns: 1fr 1fr; gap: var(--s3);
+    max-width: 760px;
+  }
+  .fork-card {
+    display: block; text-decoration: none;
+    border: 1px solid var(--ink); border-radius: var(--radius);
+    padding: var(--s3) var(--s4);
+    background: var(--paper);
+    transition: all 0.22s var(--ease);
+    cursor: pointer;
+  }
+  .fork-card .fork-label {
+    font-family:'Spline Sans Mono',monospace; font-size: var(--text-xs);
+    letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-soft);
+    display: block; margin-bottom: 0.4rem;
+    transition: color 0.22s var(--ease);
+  }
+  .fork-card .fork-title {
+    font-family: 'Fraunces', serif; font-size: var(--text-xl);
+    font-weight: 400; line-height: 1.1; color: var(--ink);
+  }
+  .fork-card .fork-title::after { content: ' →'; color: var(--accent); display: inline-block; transition: transform 0.22s var(--ease); }
+  .fork-card:hover { background: var(--ink); transform: translateY(-3px); }
+  .fork-card:hover .fork-title { color: #fff; }
+  .fork-card:hover .fork-label { color: var(--accent); }
   .hero .meta-row {
     margin-top: var(--s5);
     display: flex; gap: var(--s4); flex-wrap: wrap;
@@ -140,17 +167,53 @@
   }
   .hero .meta-row span::before { content: '● '; color: var(--accent); font-size: 0.6em; vertical-align: 2px; }
 
-  /* ---------- STATS BAND ---------- */
-  .stats-band { padding: var(--s5) 0; border-bottom: 1px solid var(--line); }
-  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s2); }
-  .stat {
+  /* ---------- PROBLEM SELECTOR (PATH B) ---------- */
+  .problems { padding: var(--s6) 0; border-bottom: 1px solid var(--line); background: var(--paper); }
+  .problem { border: 1px solid var(--line); border-radius: var(--radius); margin-bottom: var(--s2); overflow: hidden; transition: border-color 0.25s var(--ease); }
+  .problem.open, .problem:hover { border-color: var(--accent); }
+  .problem-q {
+    width: 100%; text-align: left; background: none; border: none; cursor: pointer;
+    padding: var(--s3) var(--s4);
+    display: flex; justify-content: space-between; align-items: center; gap: var(--s2);
+    font-family: 'Fraunces', serif; font-size: clamp(1.2rem, 2.6vw, var(--text-xl));
+    font-weight: 400; color: var(--ink); line-height: 1.2;
+  }
+  .problem-q > span:first-child { flex: 1; text-align: left; }
+  .problem-q .pillar-tag {
+    font-family:'Spline Sans Mono',monospace; font-size: var(--text-xs);
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft);
+    white-space: nowrap; flex-shrink: 0;
+    margin-left: auto; text-align: right;
+  }
+  .problem-q .indicator { color: var(--accent); font-family:'Fraunces',serif; font-size: var(--text-xl); line-height: 1; transition: transform 0.3s var(--ease); flex-shrink: 0; }
+  .problem.open .indicator { transform: rotate(45deg); }
+  .problem-a { max-height: 0; overflow: hidden; transition: max-height 0.45s var(--ease); }
+  .problem.open .problem-a { max-height: 800px; }
+  .problem-a-inner {
+    padding: 0 var(--s4) var(--s4);
+    display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--s4);
+    border-top: 1px dashed var(--line); padding-top: var(--s3); margin: 0 0;
+  }
+  .problem-a-inner p { font-size: var(--text-sm); color: var(--ink-soft); margin-bottom: var(--s1); }
+  .problem-a-inner .proof-title { font-family:'Spline Sans Mono',monospace; font-size: var(--text-xs); letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); display:block; margin-bottom: 0.4rem; }
+  .problem-metrics { display: flex; flex-direction: column; gap: var(--s2); justify-content: center; border-left: 1px dashed var(--line); padding-left: var(--s4); }
+  .problem-metrics .num { font-family:'Fraunces',serif; font-size: var(--text-xl); color: var(--accent); line-height: 1.05; }
+  .problem-metrics .lbl { font-size: var(--text-xs); font-family:'Spline Sans Mono',monospace; color: var(--ink-soft); margin-top: 0.2rem; }
+
+  /* ---------- PILLARS (PATH A) ---------- */
+  .pillars { padding: var(--s6) 0; border-bottom: 1px solid var(--line); }
+  .pillar-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s3); }
+  .pillar {
     border: 1px solid var(--line); border-radius: var(--radius);
-    padding: var(--s3); background: var(--paper);
+    background: var(--paper-deep); padding: var(--s4);
     transition: all 0.25s var(--ease);
   }
-  .stat:hover { border-color: var(--accent); transform: translateY(-3px); }
-  .stat .num { font-family:'Fraunces',serif; font-size: var(--text-2xl); line-height: 1; color: var(--accent); }
-  .stat .lbl { font-size: var(--text-sm); color: var(--ink-soft); margin-top: var(--s1); }
+  .pillar:hover { border-color: var(--accent); transform: translateY(-3px); }
+  .pillar .p-num { font-family:'Spline Sans Mono',monospace; font-size: var(--text-xs); color: var(--accent); letter-spacing: 0.15em; }
+  .pillar h3 { font-family:'Fraunces',serif; font-size: var(--text-xl); font-weight: 400; line-height: 1.15; margin: var(--s1) 0 var(--s2); }
+  .pillar p { font-size: var(--text-sm); color: var(--ink-soft); }
+  .pillar .p-proof { margin-top: var(--s2); padding-top: var(--s2); border-top: 1px dashed var(--line); font-size: var(--text-sm); }
+  .pillar .p-proof strong { color: var(--accent); font-family:'Fraunces',serif; font-weight: 500; }
 
   /* ---------- ABOUT ---------- */
   .about { padding: var(--s6) 0; border-bottom: 1px solid var(--line); }
@@ -187,6 +250,7 @@
   }
   .case .metric .num { font-family:'Fraunces',serif; font-size: var(--text-xl); color: var(--accent); line-height: 1.05; }
   .case .metric .lbl { font-size: var(--text-xs); font-family:'Spline Sans Mono',monospace; color: var(--ink-soft); margin-top: 0.25rem; }
+  .case .ctx-tag { display:inline-block; font-family:'Spline Sans Mono',monospace; font-size: var(--text-xs); color: var(--ink-soft); border: 1px solid var(--line); border-radius: 100px; padding: 0.2rem 0.7rem; margin-bottom: var(--s2); }
 
   /* ---------- EXPERIENCE ---------- */
   .experience { padding: var(--s6) 0; border-bottom: 1px solid var(--line); }
@@ -213,6 +277,13 @@
   .adv h3 { font-family: 'Fraunces', serif; font-weight: 500; font-size: var(--text-lg); line-height: 1.25; margin-bottom: 0.3rem; }
   .adv .role { font-family:'Spline Sans Mono',monospace; font-size: var(--text-xs); color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; }
   .adv p { font-size: var(--text-sm); color: var(--ink-soft); margin-top: var(--s1); }
+
+  /* ---------- CONTEXTS BAND ---------- */
+  .contexts { padding: var(--s6) 0; border-bottom: 1px solid var(--line); }
+  .ctx-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s3); }
+  .ctx { border-top: 3px solid var(--accent); padding-top: var(--s2); }
+  .ctx h3 { font-family:'Fraunces',serif; font-weight: 500; font-size: var(--text-lg); margin-bottom: 0.3rem; }
+  .ctx p { font-size: var(--text-sm); color: var(--ink-soft); }
 
   /* ---------- SKILLS ---------- */
   .skills { padding: var(--s6) 0; border-bottom: 1px solid var(--line); }
@@ -280,13 +351,16 @@
 
   /* ---------- RESPONSIVE ---------- */
   @media (max-width: 860px) {
-    .stats { grid-template-columns: repeat(2, 1fr); }
+    .fork { grid-template-columns: 1fr; }
+    .pillar-grid { grid-template-columns: 1fr; }
     .about-grid, .skills-grid { grid-template-columns: 1fr; gap: var(--s4); }
     .adv-grid { grid-template-columns: 1fr; }
-    .case { grid-template-columns: 1fr; }
-    .case .metrics { border-left: 0; padding-left: 0; border-top: 1px dashed var(--line); padding-top: var(--s3); flex-direction: row; flex-wrap: wrap; gap: var(--s4); }
+    .ctx-grid { grid-template-columns: 1fr 1fr; }
+    .case, .problem-a-inner { grid-template-columns: 1fr; }
+    .case .metrics, .problem-metrics { border-left: 0; padding-left: 0; border-top: 1px dashed var(--line); padding-top: var(--s3); flex-direction: row; flex-wrap: wrap; gap: var(--s4); }
     .edu-grid { grid-template-columns: 1fr; }
     .nav-links li.hide-mobile { display: none; }
+    .problem-q { flex-wrap: wrap; }
   }
 </style>
 </head>
@@ -296,8 +370,8 @@
   <div class="nav-inner">
     <a href="#top" class="nav-logo">Samantha Merlivat</a>
     <ul class="nav-links">
-      <li class="hide-mobile"><a href="#about">About</a></li>
-      <li class="hide-mobile"><a href="#work">Case Studies</a></li>
+      <li class="hide-mobile"><a href="#problems">Projects</a></li>
+      <li class="hide-mobile"><a href="#capabilities">Capabilities</a></li>
       <li class="hide-mobile"><a href="#experience">Experience</a></li>
       <li><a href="#contact" class="btn btn-primary">Work with me</a></li>
     </ul>
@@ -306,34 +380,159 @@
 
 <header class="hero" id="top">
   <div class="wrap">
-    <h1 class="reveal">Strategy on paper, <em>momentum</em> in practice.</h1>
-    <p class="lede reveal">I'm a Go-to-Market &amp; Strategy leader who has built a company from zero, taken products to market in three industries, and turned chaos into growth engines — as founder, interim CMO, and advisor.</p>
-    <div class="cta-row reveal">
-      <a href="#work" class="btn btn-primary">Show me the receipts</a>
-      <a href="https://www.linkedin.com/in/samantha-merlivat/" target="_blank" rel="noopener" class="btn btn-ghost">Connect on LinkedIn</a>
+    <h1 class="reveal">Strategy, <em>executed.</em></h1>
+    <p class="lede reveal">I'm a Go-to-Market &amp; Strategy leader who has built a company from zero, taken products into new markets, and turned ambitious plans into working systems — as founder, operator, and advisor.</p>
+    <div class="fork reveal">
+      <a class="fork-card" href="#capabilities">
+        <span class="fork-label">Path 01</span>
+        <span class="fork-title">I'm hiring a leader</span>
+      </a>
+      <a class="fork-card" href="#problems">
+        <span class="fork-label">Path 02</span>
+        <span class="fork-title">I have a problem to solve</span>
+      </a>
     </div>
     <div class="meta-row reveal">
-      <span>EdTech · Adtech · Web3</span>
-      <span>Entrepreneurship · Operations · Product Leadership · Scaling</span>
+      <span>GTM · Operations · Programs · Ecosystems</span>
+      <span>Zero-to-one · Scale-up · Enterprise &amp; AI · Public sector</span>
     </div>
   </div>
 </header>
 
-<section class="stats-band">
+<section class="problems" id="problems">
   <div class="wrap">
-    <div class="stats">
-      <div class="stat reveal"><div class="num">90k+</div><div class="lbl">App downloads as solo founder, twice Apple's App of the Day</div></div>
-      <div class="stat reveal"><div class="num">3.7×</div><div class="lbl">User base growth in 3 months as interim CMO</div></div>
-      <div class="stat reveal"><div class="num">192%</div><div class="lbl">Of registration target hit for Solana Summit Germany</div></div>
-      <div class="stat reveal"><div class="num">4</div><div class="lbl">Countries where I've built, advised and shipped</div></div>
+    <span class="kicker reveal">01 · If you have a problem to solve</span>
+    <h2 class="section-title reveal">Which one is <em>yours?</em></h2>
+    <p class="section-intro reveal">Each one is something I've solved before — with the numbers to show for it.</p>
+
+    <div class="problem reveal">
+      <button class="problem-q" aria-expanded="false">
+        <span>"I'm entering a new market."</span>
+        <span class="pillar-tag">Go-to-Market</span>
+        <span class="indicator">+</span>
+      </button>
+      <div class="problem-a">
+        <div class="problem-a-inner">
+          <div>
+            <span class="proof-title">How I've solved it</span>
+            <p>I've launched a product from zero into two language markets: positioning, pricing, and an automated marketing system that grew revenue 30% while cutting marketing spend by 20% — with international school partnerships driving adoption.</p>
+            <p>Most recently, I validated a brand-new enterprise AI product in the German market — building a 160-account pipeline from zero, closing its first customer, and feeding what I heard in sales conversations back into the product roadmap — on a one-day-a-week engagement.</p>
+            <p>Before that, I spent five years at Forrester advising global Adtech companies (&gt;$1B revenue) and Fortune 500 brands on exactly this: GTM strategy, product roadmaps, and market positioning.</p>
+          </div>
+          <div class="problem-metrics">
+            <div class="metric"><div class="num">0→90k</div><div class="lbl">Downloads in 2 markets</div></div>
+            <div class="metric"><div class="num">0→1</div><div class="lbl">First customer for a new AI SaaS</div></div>
+            <div class="metric"><div class="num">&gt;$1B</div><div class="lbl">Clients advised on GTM</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="problem reveal">
+      <button class="problem-q" aria-expanded="false">
+        <span>"We're moving faster than we can execute."</span>
+        <span class="pillar-tag">Operations</span>
+        <span class="indicator">+</span>
+      </button>
+      <div class="problem-a">
+        <div class="problem-a-inner">
+          <div>
+            <span class="proof-title">How I've solved it</span>
+            <p>Speed without systems breaks things. I build the systems while keeping the speed: at GoLexic, I built the full delivery operation — a team of 6 shipping continuously through Scrum/Kanban, from roadmap to release to iteration — with systems that lifted 30-day retention from 43% to 71%.</p>
+            <p>For Solana, I planned and executed Solana Summit Germany in three months — production, marketing, and partnerships running in parallel — more than doubling the registration target.</p>
+            <p>And at Siemens, I ran stakeholder alignment through a post-merger integration — execution under maximum organisational complexity.</p>
+          </div>
+          <div class="problem-metrics">
+            <div class="metric"><div class="num">3 months</div><div class="lbl">Concept to a 2,800-registration summit</div></div>
+            <div class="metric"><div class="num">43→71%</div><div class="lbl">30-day retention</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="problem reveal">
+      <button class="problem-q" aria-expanded="false">
+        <span>"I need to design and execute a strategic program."</span>
+        <span class="pillar-tag">Program Leadership</span>
+        <span class="indicator">+</span>
+      </button>
+      <div class="problem-a">
+        <div class="problem-a-inner">
+          <div>
+            <span class="proof-title">How I've solved it</span>
+            <p>I own programs end to end. For Solana Summit Germany 2026, I led the marketing: video campaigns, a Creator program, and Telegram marketing that delivered 215% of the registration target — including 630+ creator video submissions generating millions of impressions and sending the Summit viral on X in the seven days before the event.</p>
+            <p>On event production, I led all decisions: managing the production agency, 14 partners and sponsors, and 40+ international speakers in a high-engagement format that kept close to 1,000 attendees on site from morning until the after party.</p>
+            <p>I also developed programming for the Build Station Accelerator, and mentor founders through ESCP Business School's entrepreneurship programme.</p>
+          </div>
+          <div class="problem-metrics">
+            <div class="metric"><div class="num">2,800</div><div class="lbl">Registrations vs. 1,300 target</div></div>
+            <div class="metric"><div class="num">630+</div><div class="lbl">Creator video submissions</div></div>
+            <div class="metric"><div class="num">~1,000</div><div class="lbl">On site, morning to after party</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="problem reveal">
+      <button class="problem-q" aria-expanded="false">
+        <span>"I need an ecosystem around my product."</span>
+        <span class="pillar-tag">Partnerships &amp; Ecosystem</span>
+        <span class="indicator">+</span>
+      </button>
+      <div class="problem-a">
+        <div class="problem-a-inner">
+          <div>
+            <span class="proof-title">How I've solved it</span>
+            <p>Products win when other people have a stake in their success. For Solana Summit Germany, I secured 14 partners and sponsors (3,000+ giveaway items, from phones to wearables) and built a Creator program. To develop the Solana ecosystem in Germany, I organise curated events with C-level executives and investors.</p>
+            <p>I've been building ecosystems for years: a founder community and business book club in Berlin, advisory relationships from Fortune 500 boardrooms to the European Commission, and pipeline partnerships with sales leadership at Forrester.</p>
+          </div>
+          <div class="problem-metrics">
+            <div class="metric"><div class="num">14</div><div class="lbl">Summit partners &amp; sponsors</div></div>
+            <div class="metric"><div class="num">3,000+</div><div class="lbl">Partner items secured</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pillars" id="capabilities">
+  <div class="wrap">
+    <span class="kicker reveal">02 · If you're hiring</span>
+    <h2 class="section-title reveal">Four things I do <em>unusually well.</em></h2>
+    <div class="pillar-grid">
+      <div class="pillar reveal">
+        <span class="p-num">01</span>
+        <h3>Executing Go-to-Market</h3>
+        <p>Positioning, pricing, launch, and growth marketing — proven as founder (GoLexic), interim CMO (bookie), and enterprise BD lead (COMPUTD).</p>
+        <div class="p-proof"><strong>0→90k</strong> downloads in two markets; <strong>3.7×</strong> users in 90 days as interim CMO; first customer for a new AI SaaS.</div>
+      </div>
+      <div class="pillar reveal">
+        <span class="p-num">02</span>
+        <h3>Scaling Operations</h3>
+        <p>Turning plans into shipped work: five years of product delivery at GoLexic, post-merger integration at Siemens, a summit produced in three months for Solana.</p>
+        <div class="p-proof"><strong>3 months</strong> from concept to a 2,800-registration summit; 30-day retention lifted 43→71%.</div>
+      </div>
+      <div class="pillar reveal">
+        <span class="p-num">03</span>
+        <h3>Leading Strategic Programs</h3>
+        <p>Programs owned from concept to delivery: Solana Summit Germany 2026, Build Station Accelerator programming, founder mentoring at ESCP.</p>
+        <div class="p-proof"><strong>215%</strong> of registration target; viral on X in the week before the Summit.</div>
+      </div>
+      <div class="pillar reveal">
+        <span class="p-num">04</span>
+        <h3>Building Partnerships &amp; Ecosystems</h3>
+        <p>The network that gives a product momentum: Summit partners and sponsors, a Creator program, and curated C-level events for the Solana ecosystem in Germany.</p>
+        <div class="p-proof"><strong>14</strong> partners and sponsors for one summit; advisor to the European Commission.</div>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="about" id="about">
   <div class="wrap">
-    <span class="kicker reveal">01 · About</span>
-    <h2 class="section-title reveal">Bias for action, appetite for <em>chaos.</em></h2>
+    <span class="kicker reveal">03 · About</span>
+    <h2 class="section-title reveal">Bias for action, <em>order</em> from chaos.</h2>
     <div class="about-grid">
       <div class="about-main reveal">
         <p>I'm most excited in fast-paced environments where <strong>chaos needs to be organised</strong>, problems need to be solved, and creative solutions are encouraged.</p>
@@ -351,7 +550,7 @@
         </div>
         <div class="fact">
           <span class="f-label">Off hours</span>
-          <span class="f-body">Fitness, art &amp; design, blockchain, running a business book club and founder community</span>
+          <span class="f-body">Fitness, cycling, padel, art, design, running a book club and founder community</span>
         </div>
       </div>
     </div>
@@ -360,11 +559,12 @@
 
 <section class="cases" id="work">
   <div class="wrap">
-    <span class="kicker reveal">02 · Case Studies</span>
+    <span class="kicker reveal">04 · Case Studies</span>
     <h2 class="section-title reveal">Proof, with <em>numbers.</em></h2>
 
     <div class="case reveal">
       <div>
+        <span class="ctx-tag">Zero-to-one</span>
         <span class="kicker">GoLexic · Founder &amp; CEO · 2019–2025</span>
         <h3>Building a growth engine without growing the budget</h3>
         <p>GoLexic is a personalised, speech-based reading intervention app for dyslexic children, in English and German. As solo founder I led product and GTM end to end.</p>
@@ -375,7 +575,7 @@
         </ul>
       </div>
       <div class="metrics">
-        <div class="metric"><div class="num">+30%</div><div class="lbl">Revenue in 2024, flat ad spend</div></div>
+        <div class="metric"><div class="num">+30%</div><div class="lbl">Revenue in 2024, ad spend −20%</div></div>
         <div class="metric"><div class="num">43→71%</div><div class="lbl">30-day retention</div></div>
         <div class="metric"><div class="num">+21%</div><div class="lbl">Customer LTV</div></div>
       </div>
@@ -383,17 +583,18 @@
 
     <div class="case reveal">
       <div>
+        <span class="ctx-tag">Scale-up sprint</span>
         <span class="kicker">Solana Superteam Germany · Growth &amp; Events Lead · 2025–now</span>
         <h3>Making a tech summit trend on X</h3>
         <p>I lead programs bringing new founders and partners into the Solana ecosystem in Germany — including full ownership of Solana Summit Germany 2026.</p>
         <ul>
           <li>Video campaigns, a Creator program, social &amp; Telegram marketing</li>
-          <li>11 ecosystem partnerships secured — from free phones to wearables</li>
+          <li>14 partners and sponsors secured — from free phones to wearables</li>
           <li>Marketing &amp; program development for the Build Station Accelerator</li>
         </ul>
       </div>
       <div class="metrics">
-        <div class="metric"><div class="num">2,500+</div><div class="lbl">Registrations vs. 1,300 target</div></div>
+        <div class="metric"><div class="num">2,800</div><div class="lbl">Registrations vs. 1,300 target</div></div>
         <div class="metric"><div class="num">3,000+</div><div class="lbl">Partner giveaway items secured</div></div>
         <div class="metric"><div class="num">Trending</div><div class="lbl">On X.com after the Summit</div></div>
       </div>
@@ -401,6 +602,7 @@
 
     <div class="case reveal">
       <div>
+        <span class="ctx-tag">Scale-up sprint</span>
         <span class="kicker">bookie UG · Interim CMO · Dec 2024 – Feb 2025</span>
         <h3>3.7× the user base in one quarter</h3>
         <p>Brought in to accelerate growth for a consumer app, I led performance marketing and influencer relationships through a decisive three-month sprint.</p>
@@ -418,14 +620,25 @@
 
 <section class="experience" id="experience">
   <div class="wrap">
-    <span class="kicker reveal">03 · Experience</span>
-    <h2 class="section-title reveal">Four countries, three industries, <em>one throughline.</em></h2>
+    <span class="kicker reveal">05 · Experience</span>
+    <h2 class="section-title reveal">Four countries, four industries, <em>one throughline.</em></h2>
     <div class="tl-wrap">
       <div class="tl reveal">
         <span class="when">Apr 2025 — now · Berlin</span>
         <h3>Growth &amp; Events Lead (Contractor)</h3>
         <div class="org">Solana | Superteam Germany</div>
         <p>Leading programs to bring new founders and partners to Solana in Germany — event production, creator marketing, and accelerator program development.</p>
+      </div>
+      <div class="tl reveal">
+        <span class="when">Apr — Dec 2025 · Germany · Fractional, 1 day/week</span>
+        <h3>Head of Business Development — Germany</h3>
+        <div class="org">COMPUTD BV</div>
+        <p>COMPUTD builds custom AI solutions for enterprise. I led market validation and GTM for Apollo, their first SaaS product — an AI scheduling platform.</p>
+        <ul>
+          <li>Built a 160-account pipeline of German call centers from zero, generating 40+ product demos through direct outbound</li>
+          <li>Closed Apollo's first trial customer — the product's first commercial validation</li>
+          <li>Surfaced critical user feedback through sales conversations, used to prioritise the product development roadmap</li>
+        </ul>
       </div>
       <div class="tl reveal">
         <span class="when">Dec 2024 — Feb 2025 · Berlin</span>
@@ -468,7 +681,7 @@
 
 <section class="advisory">
   <div class="wrap">
-    <span class="kicker reveal">04 · Advisory &amp; Ecosystem</span>
+    <span class="kicker reveal">06 · Advisory &amp; Ecosystem</span>
     <h2 class="section-title reveal">Trusted in the <em>room.</em></h2>
     <div class="adv-grid">
       <div class="adv reveal">
@@ -490,9 +703,34 @@
   </div>
 </section>
 
+<section class="contexts">
+  <div class="wrap">
+    <span class="kicker reveal">07 · Range</span>
+    <h2 class="section-title reveal">Same skills, very different <em>rooms.</em></h2>
+    <div class="ctx-grid">
+      <div class="ctx reveal">
+        <h3>Zero-to-one</h3>
+        <p>Founded, built, and scaled GoLexic from idea to 90k+ downloads.</p>
+      </div>
+      <div class="ctx reveal">
+        <h3>Scale-up sprints</h3>
+        <p>Interim CMO and growth leadership when speed matters most.</p>
+      </div>
+      <div class="ctx reveal">
+        <h3>Enterprise &amp; AI</h3>
+        <p>Strategic counsel to &gt;$1B companies and Fortune 500 brands; market validation for a new enterprise AI SaaS.</p>
+      </div>
+      <div class="ctx reveal">
+        <h3>Public sector</h3>
+        <p>Advisor and jury member for the European Commission and BMWK.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="skills">
   <div class="wrap">
-    <span class="kicker reveal">05 · Toolkit</span>
+    <span class="kicker reveal">08 · Toolkit</span>
     <h2 class="section-title reveal">What I <em>work with.</em></h2>
     <div class="skills-grid">
       <div class="skill-group reveal">
@@ -516,7 +754,7 @@
 
 <section class="edu">
   <div class="wrap">
-    <span class="kicker reveal">06 · Education</span>
+    <span class="kicker reveal">09 · Education</span>
     <h2 class="section-title reveal">Where it <em>started.</em></h2>
     <div class="edu-grid">
       <div class="edu-item reveal">
@@ -544,9 +782,9 @@
 
 <section class="contact" id="contact">
   <div class="wrap">
-    <span class="kicker reveal">07 · Contact</span>
+    <span class="kicker reveal">10 · Contact</span>
     <h2 class="reveal">Have chaos that needs <em>organising?</em></h2>
-    <p class="reveal">I'm open to leadership roles, freelance engagements, and advisory projects — anywhere strategy needs to move from paper to momentum. The fastest way to reach me is LinkedIn.</p>
+    <p class="reveal">I'm open to leadership roles, freelance engagements, and advisory projects — full-time, interim, or fractional; the model follows the problem. The fastest way to reach me is LinkedIn.</p>
     <div class="cta-row reveal">
       <a href="https://www.linkedin.com/in/samantha-merlivat/" target="_blank" rel="noopener" class="btn btn-primary">Message me on LinkedIn</a>
     </div>
@@ -561,8 +799,9 @@
 </footer>
 
 <script>
+  // Scroll reveals
   const io = new IntersectionObserver((entries) => {
-    entries.forEach((e, i) => {
+    entries.forEach((e) => {
       if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
     });
   }, { threshold: 0.12 });
@@ -570,6 +809,23 @@
   document.querySelectorAll('.reveal').forEach((el, i) => {
     el.style.transitionDelay = (Math.min(i % 6, 4) * 60) + 'ms';
     io.observe(el);
+  });
+
+  // Problem selector accordion (one open at a time)
+  const problems = document.querySelectorAll('.problem');
+  problems.forEach((p) => {
+    const btn = p.querySelector('.problem-q');
+    btn.addEventListener('click', () => {
+      const isOpen = p.classList.contains('open');
+      problems.forEach((other) => {
+        other.classList.remove('open');
+        other.querySelector('.problem-q').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        p.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
   });
 </script>
 
